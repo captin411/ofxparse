@@ -166,9 +166,9 @@ class TestStringToDate(TestCase):
         self.assertEquals(OfxParser.parseOfxDateTime('19881201'),
                           datetime(1988, 12, 1, 0, 0))
         self.assertEquals(OfxParser.parseOfxDateTime('19881201230100'),
-                          datetime(1988, 12, 1, 23, 01))
+                          datetime(1988, 12, 1, 23, 1))
         self.assertEquals(OfxParser.parseOfxDateTime('20120229230100'),
-                          datetime(2012, 2, 29, 23, 01))
+                          datetime(2012, 2, 29, 23, 1))
 
     def test_parses_time_offset(self):
         ''' Test that we handle GMT offset '''
@@ -184,10 +184,10 @@ class TestStringToDate(TestCase):
             datetime(2012, 3, 1, 5, 1))
         self.assertEquals(
             OfxParser.parseOfxDateTime('20120412120000 [-5.5:XXX]'),
-            datetime(2012, 04, 12, 17, 30))
+            datetime(2012, 4, 12, 17, 30))
         self.assertEquals(
             OfxParser.parseOfxDateTime('20120412120000 [-5:XXX]'),
-            datetime(2012, 04, 12, 17))
+            datetime(2012, 4, 12, 17))
         self.assertEquals(
             OfxParser.parseOfxDateTime('20120922230000 [+9:JST]'),
             datetime(2012, 9, 22, 14, 0))
